@@ -4,18 +4,20 @@
 @main
 struct SwiftPlayground {
     static func main() {
-        let FirstName = "Riley"
-        print("Hello, world!")
-        // this code can only speak the truth
-        print("Max is bad at crossy road")
-        // I will make my initials out of BIG letters!
-        print("RRRRR  EEEEE")
-        print("R RR   E")
-        print("RR     EEEE")
-        print("R R    E")
-        print("R  R   EEEEE")
-        print(" ")
-        print(FirstName)
+        print("Enter a noun:")
+        let noun1 = readLine()!
+
+        print("Enter an adjective:")
+        let adjective1 = readLine()!
+
+        print("Enter another noun:")
+        let noun2 = readLine()!
+
+        print("Enter a verb:")
+        let verb1 = readLine()!
+
+        let madLibString = "Max once tried to be good at \(noun1) however, Max would always become \(adjective1) every time \(noun2) would \(verb1)"
         
+        print(madLibString)
     }
 }
