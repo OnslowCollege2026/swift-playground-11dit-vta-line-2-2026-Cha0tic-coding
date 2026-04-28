@@ -4,18 +4,15 @@
 @main
 struct SwiftPlayground {
     static func main() {
-        let FirstName = "Riley"
-        print("Hello, world!")
-        // this code can only speak the truth
-        print("Max is bad at crossy road")
-        // I will make my initials out of BIG letters!
-        print("RRRRR  EEEEE")
-        print("R RR   E")
-        print("RR     EEEE")
-        print("R R    E")
-        print("R  R   EEEEE")
-        print(" ")
-        print(FirstName)
-        
+        let x = 2004189048901498
+        let y = 10149013489013483
+
+        let added = x + y
+        let subtracted = x - y
+        let multiplied = x * y
+        let divided = x / y
+        let remainder = x % y
+
+        print("\(x) + \(y) = \(added)")
     }
 }
