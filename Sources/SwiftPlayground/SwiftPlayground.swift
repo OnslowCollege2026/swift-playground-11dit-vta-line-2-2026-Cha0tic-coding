@@ -4,20 +4,19 @@
 @main
 struct SwiftPlayground {
     static func main() {
-        print("Enter a noun:")
-        let noun1 = readLine()!
+print("Enter your age:")
 
-        print("Enter an adjective:")
-        let adjective1 = readLine()!
+var userInput = readLine()!
+let age = Int(userInput)!
 
-        print("Enter another noun:")
-        let noun2 = readLine()!
+print("Enter the password:")
+userInput = readLine()!
 
-        print("Enter a verb:")
-        let verb1 = readLine()!
+let isOldEnough = age >= 18
+let knowsSecret = userInput == "halibut"
+let canEnterBar = isOldEnough && knowsSecret
 
-        let madLibString = "Max once tried to be good at \(noun1) however, Max would always become \(adjective1) every time \(noun2) would \(verb1)"
-        
-        print(madLibString)
+print(canEnterBar)
+
     }
 }
