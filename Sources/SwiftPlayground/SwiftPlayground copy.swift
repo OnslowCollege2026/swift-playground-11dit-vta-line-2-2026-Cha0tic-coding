@@ -5,7 +5,7 @@
 struct SwiftPlayground {
     static func main() {
     print("enter your age:")
-    
+
     var UserImput = readLine()!
     let age = Int(ageString)!
 
