@@ -13,6 +13,8 @@ var childFares: [Int] = [400, 600, 750]
 var ticketTypes: [String] = ["24-hour", "48-hour", "72-hour"]
 
 print("what is your age?")
+let age = readLine()!
 
+print("")
     }
 }
