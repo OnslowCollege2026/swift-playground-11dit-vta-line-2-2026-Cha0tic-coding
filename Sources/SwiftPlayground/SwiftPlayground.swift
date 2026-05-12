@@ -21,15 +21,15 @@ while isRunning {
 
     if userInput == "A" {
         total = total + 12
-        print("Thank you for your basic purchase. Your total is \(total)")
+        print("Thank you for your basic purchase. Your total is $\(total)")
     } else if userInput == "B" {
         total = total + 23
-        print("The best option. Your total is \(total)")
+        print("The best option. Your total is $\(total)")
     } else if userInput == "C" {
         total = total + 15
-        print("Amazing. Your total is \(total)")
+        print("Amazing. Your total is $\(total)")
     } else if userInput == "M" {
-        print("your total is \(total). Y/N to purchase")
+        print("your total is $\(total). Y/N to purchase")
         paying = readLine()!.uppercased() 
         isRunning = false 
     } else if userInput == "Q" {
