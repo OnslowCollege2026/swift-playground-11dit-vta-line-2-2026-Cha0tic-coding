@@ -22,7 +22,7 @@ struct SwiftPlayground {
 
 
         //print("Chose a number")
-        //var x = readLine()
+        //let x = readLine()
 
         //repeat {
         //    var x = 1
