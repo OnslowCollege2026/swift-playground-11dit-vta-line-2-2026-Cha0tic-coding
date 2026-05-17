@@ -9,19 +9,25 @@ var isRunning = true
 
 while isRunning == true {
     print("What ingredients do you have?")
-    var input = readLine()!.lowercased()
+    let input = readLine()!.lowercased()
 if input == "chocolate"{
     ingredients.append(input)
     isRunning = false
-} else {
-isRunning = false
+} 
+else {
+ingredients.append(input)
 }
-}
+
 
 print(ingredients)
-if ingredients == "chocolate" {
-    print("yum")
-}
+if input == "chocolate" {
+    print("Yum!")
+    print("Let's start baking.")
 }
 
-    }
+}}}
+
+// identify input and output
+// discouver variables/constants
+// run calculations
+// draft it up, cuh
