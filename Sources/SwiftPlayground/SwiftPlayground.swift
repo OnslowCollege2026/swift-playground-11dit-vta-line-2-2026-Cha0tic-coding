@@ -31,5 +31,10 @@ if input2 == "Q" {
 
 while isRunning == true {
     print("Enter another movie time:")
-} if movieLength < 30 || movieLength > 300 {
+if movieLength < 30 {
+
+}
+else if movieLength > 300 {
+
+}
     }}}
