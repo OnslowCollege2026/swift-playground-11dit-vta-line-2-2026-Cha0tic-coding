@@ -4,25 +4,22 @@
 @main
 struct SwiftPlayground {
     static func main() {
-
-        var age: Int? = nil
-
-while age == nil {
-    print("Enter your age:")
     
-    if let input = readLine(), let enteredAge = Int(input) {
-        if enteredAge < 0 {
-            print("Age cannot be negative. Enter a valid age.")
-        } else if enteredAge < 18 {
-            print("You must be 18 or older. Enter a valid age.")
-        } else {
-            age = enteredAge
-        }
-    } else {
-        print("Invalid input. Enter a valid integer for age.")
-    }}
+// Price of the bread is $19.99
+let Price: Double = 19.99
+let Quantity: Double = 3.0
+// price * quantity
+let Subtotal: Double = 19.99 * 3.0
+// 15% tax rate
+let Tax: Double = 19.99 * 3.0 * 0.15
+let Total: Double = 19.99 * 3.0 - Tax
 
 
-print("Valid age entered: \(age!)")
-
+print("Price per item: $\(Price)")
+print("Quantity: \(Quantity)")
+print("Quantity x Price = \(Subtotal)")
+print("Subtotal: $\(Subtotal)")
+print("Tax (15%): $\(Tax)")
+print("Subtoal - Tax = \(Total)")
+print("Total: $\(Total)")
     }}
