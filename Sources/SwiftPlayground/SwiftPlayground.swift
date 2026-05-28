@@ -4,7 +4,7 @@
 @main
 struct SwiftPlayground {
     static func main() {
-        
+    
 print("The length of the rectangle is \(12.5) units.")
 print("The width of the rectangle is \(8) units.")
 print("The area of the rectangle is \(12.5 * 8.0) square units.")
