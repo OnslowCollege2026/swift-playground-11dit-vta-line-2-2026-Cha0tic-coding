@@ -14,4 +14,21 @@ func directionsToTimeSquare() {
 }
 // prints function
 directionsToTimeSquare()
+
+
+let weight: Double = 55
+let height: Double = 150
+let heightSquared: Double = height * height
+let BMI: Double = heightSquared / weight
+
+/// This shows the process of finding the BMI to the user
+func findBMI() {
+    print("Weight is: \(weight)kg")
+    print("Height is: \(height)cm")
+    print("Height^2 is: \(height)cm * \(height)cm")
+    print("\(heightSquared)cm / \(weight)kg = \(BMI) (BMI)")
+}
+
+// Printing code
+findBMI()
     }}
