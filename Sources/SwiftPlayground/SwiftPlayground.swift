@@ -5,9 +5,23 @@
 struct SwiftPlayground {
     static func main() {
     
-print("The length of the rectangle is \(12.5) units.")
-print("The width of the rectangle is \(8) units.")
-print("The area of the rectangle is \(12.5 * 8.0) square units.")
-print("The perimeter of the rectangle is \(2 * (length + width) units.")
+var isRunning = true
+
+/// Price of ticket.
+let ticketPrice: Double = 17.5
+
+/// Amount of friends.
+let numberOfFriends = 8
+
+if let isRunning == true {
+    print("The cost of each ticket is $\(ticketPrice).")
+    print("You have \(numberOfFriends) friends.")
+    print("Total price is \(numberOfFriends))
+    print("Would you like to give a tip? Y/N")
+    var userInput = readLine()?.uppercased()
+} 
+if userInput = "Y" {
+
+}
 
     }}
