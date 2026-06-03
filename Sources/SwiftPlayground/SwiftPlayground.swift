@@ -5,10 +5,13 @@
 struct SwiftPlayground {
     static func main() {
 
-/// Create a aisle for a store
+/// Create a aisle for a mall
 
 let isRunning = true
-func 
+
+func wareHouse() {
+    print("A, to ")
+}
 
 
 
