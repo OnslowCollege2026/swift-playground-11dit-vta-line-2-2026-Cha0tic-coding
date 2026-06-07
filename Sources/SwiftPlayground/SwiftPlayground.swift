@@ -10,8 +10,11 @@ struct SwiftPlayground {
 let isRunning = true
 
 func wareHouse() {
-    print("Type "A" to enter the Warehouse.")
-    print("")
+    print("A. to enter the Warehouse.")
+    print("B. to enter the Supermarket.")
+    print("C. to do a backflip")
+    print("D. ")
+    print("Q. to leave the console")
 }
 
 
