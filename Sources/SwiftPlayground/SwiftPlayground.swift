@@ -5,42 +5,34 @@
 struct SwiftPlayground {
     static func main() {
 
+/// Created an array to contain all of the birds and insects, and made the program run
 var isRunning = true
+let birds: [String] = ["Tieke", "Kākā", "Takahē", "Hihi", "Kiwi", "Pāteke", 
+"Tūī", "Kererū"]
+let insects: [String] = ["Giant Wētā", "Tree Wētā", "Cave Wētā", "Putoko", 
+"Pūngāwerewere", "Ngaokeoke", "Waemano", "Kapowai"]
 
-while isRunning == true {
+
 print("Welcome to Zealandia tracker")
 print(" ")
 print("Did you see a bird or a insect?")
 
 /// typing here whether they saw bird or insect
-var birdOrInsect = readLine()?.lowercased()
+var birdOrInsect = readLine()!.lowercased()
 
 /// if they typed "bird"
 if birdOrInsect == "bird" {
-    print("1. Tieke")
-print("2. Kākā")
-print("3. Takahē")
-print("4. Hihi")
-print("5. Kiwi")
-print("6. Pāteke")
-print("7. Tūī")
-print("8. Kererū")
-print("Enter a number: 8")
+birds.enumerated().forEach {index, bird in
+print("\(index + 1). \(bird)")}
+}
+print("Enter a number")
+let birdIndex = Int(readLine()!)!
 
 
-} 
 /// if they typed "insect"
-else if birdOrInsect == "insect" {
-print("1. Giant Wētā")
-print("2. Tree Wētā")
-print("3. Cave Wētā")
-print("4. Putoko")
-print("5. Pūngāwerewere")
-print("6. Ngaokeoke")
-print("7. Waemano")
-print("8. Kapowai")
-print("Enter a number:")
-
+else if birdOrInsect == "insect" 
+insects.enumerated().forEach {index, insect in
+print("\(index + 1). \(insect)")}
 } 
 /// if they did not type either
 else {
@@ -48,6 +40,5 @@ else {
     isRunning = false
 }
 
-}
 
-    }}
+}
