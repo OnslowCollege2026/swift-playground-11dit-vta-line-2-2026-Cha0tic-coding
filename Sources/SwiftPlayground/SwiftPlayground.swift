@@ -11,8 +11,10 @@ let birds: [String] = ["Tieke", "Kākā", "Takahē", "Hihi", "Kiwi", "Pāteke",
 "Tūī", "Kererū"]
 let insects: [String] = ["Giant Wētā", "Tree Wētā", "Cave Wētā", "Putoko", 
 "Pūngāwerewere", "Ngaokeoke", "Waemano", "Kapowai"]
+var species: [String] = []
+var birdsSeen: [Int] = []
 
-
+print(" ")
 print("Welcome to Zealandia tracker")
 print(" ")
 print("Did you see a bird or a insect?")
@@ -24,16 +26,21 @@ var birdOrInsect = readLine()!.lowercased()
 if birdOrInsect == "bird" {
 birds.enumerated().forEach {index, bird in
 print("\(index + 1). \(bird)")}
-}
-print("Enter a number")
-let birdIndex = Int(readLine()!)!
 
+// choose which bird they saw and note it down
+print("Enter a number")
+var birdIndex = Int (readLine()!)!
+}
 
 /// if they typed "insect"
-else if birdOrInsect == "insect" 
+else if birdOrInsect == "insect" {
 insects.enumerated().forEach {index, insect in
 print("\(index + 1). \(insect)")}
-} 
+
+// choose which insect they saw and note it down
+print("Enter a number")
+var insectIndex = Int (readLine()!)!
+}
 /// if they did not type either
 else {
     print("This is not a valid response")
@@ -41,4 +48,14 @@ else {
 }
 
 
+
+
+
+/// counts species and gives final output
+for (bird, birdSeen) in zip(birds, birdsSeen) {
+    //if birdsSeen: Int = > 0 {
+        print("\(birdsSeen): \(bird)")
+    }
 }
+}
+
