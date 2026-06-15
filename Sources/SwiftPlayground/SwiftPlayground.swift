@@ -30,7 +30,7 @@ var wakeUpTime = Int (readLine()!)!
 
 var nightSleepTime: Int = 12 - fellAsleepTime
 var netSleepTime: Int = nightSleepTime + wakeUpTime
-    print("You slep \ne")
+    print("You slep \")
     print("Added \(netSleepTime) hours.")
 }
 
