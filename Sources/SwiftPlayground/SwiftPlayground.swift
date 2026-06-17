@@ -18,11 +18,11 @@ let totalDays: Int = 5
 let timeUntillMidnight = 12
 
 /// This is the equation to find the average amount of hours.
-var averageHours: Int = totalHours / totalDays
+let averageHours: Int = totalHours / totalDays
 
 /// These variables change the day of the week
 var day: Int = 0
-var nextDay: Int = 1
+let nextDay: Int = 1
 
 /// These days of the week will be used for the while loop.
 let fallAsleepDays: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday"]
@@ -34,62 +34,66 @@ print("")
 
 while isRunning == true {
 
+/// Changes the day for each while loop.
     print("What time did you fall asleep on \(fallAsleepDays[day])?")
 
     print("Enter a number:")
 
-/// this makes sure that the answer is a number
-var fellAsleepTime = Int (readLine()!)!
+/// this makes sure that the answer is a number.
+let fellAsleepTime = Int (readLine()!)!
 
     print("What time did you wake up on \(wakeUpDays[day])?")
     print("Enter a number:")
 
-var wakeUpTime = Int (readLine()!)!
+let wakeUpTime = Int (readLine()!)!
 
 
 
-/// This is the equation to find the total sleep time of the night
-var nightSleepTime: Int = timeUntillMidnight - fellAsleepTime
-var netSleepTime: Int = nightSleepTime + wakeUpTime
+/// This is the equation to find the total sleep time of the night.
+let nightSleepTime: Int = timeUntillMidnight - fellAsleepTime
+let netSleepTime: Int = nightSleepTime + wakeUpTime
 
 print("you slept for \(netSleepTime) hours.")
 print("Added \(netSleepTime) hours to the total.")
 print("")
 
 
-/// Adds the netSleepTime to the total amount of hours they slept
+/// Adds the netSleepTime to the total amount of hours they slept.
 totalHours += netSleepTime
 
-/// increases the while loop
+/// increases the while loop.
 day += nextDay
 
-/// once the week ends, finish the while loop
+/// once the week ends, finish the while loop.
 if day > 4 {
     isRunning = false
 }
 
 }
 
+// After the code, tell the user the stats recorded.
 print("")
 print("You slept a total of \(totalHours) hours.")
 print("")
 print("Through the week you slept an average of \(averageHours) hours every night")
 print("")
-
-if averageHours >= 8 {
+    
+// Measure the average and tell the user if they slept a good ammount
+if averageHours > 8 {
     print("Congrats, You slept a healthy amount of hours this week")
 }
-else if averageHours < 8 {
+else if averageHours <= 8 {
     print("You need to sleep more bucko")
 }
 
 print("")
 print("Do you want to record another week? (Y/N)")
 
+/// This will record whether or not they want to repead the while loop
 let anotherWeek = readLine()?.lowercased()
 
 if anotherWeek == "y" {
-    let isRunning = true
+    isRunning = true
 } else if anotherWeek == "n" {
     print("alr, bye bye")
 } else {
