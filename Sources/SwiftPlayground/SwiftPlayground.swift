@@ -49,15 +49,16 @@ while isRunning == true {
 /// this makes sure that the answer is a number.
 let fellAsleepTime = Int (readLine()!)!
 
+if fellAsleepTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
+    print("Entered the number: \(fellAsleepTime)") }
+
     print("What time did you wake up on \(wakeUpDays[day])?")
     print("Enter a number:")
 
 let wakeUpTime = Int (readLine()!)!
 
-if fellAsleepTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
-    print("m")
-} else if wakeUpTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
-    print("n")
+if wakeUpTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
+    print("Entered the number: \(wakeUpTime)")
     } else {
         isRunning = false
     }
