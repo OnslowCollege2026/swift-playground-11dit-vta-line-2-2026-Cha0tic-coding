@@ -8,19 +8,25 @@ struct SwiftPlayground {
 /// Enables the while loop
 var isRunning = true
 
+/// Enables questions after main while loop
+var afterWhileLoopIsRunning = true
+
 /// This will record the total ammount of hours.
 var totalHours: Int = 0
 
-/// amount of days in a week.
+/// Amount of days in a week.
 let totalDays: Int = 5
 
-/// time untill midnight will be used in the equation.
+/// Time untill midnight will be used in the equation.
 let timeUntillMidnight = 12
+
+/// Help calculate whether or not they put a correct Int.
+let Mourning = 1
 
 /// This is the equation to find the average amount of hours.
 let averageHours: Int = totalHours / totalDays
 
-/// These variables change the day of the week
+/// These variables change the day of the week.
 var day: Int = 0
 let nextDay: Int = 1
 
@@ -28,6 +34,7 @@ let nextDay: Int = 1
 let fallAsleepDays: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday"]
 let wakeUpDays: [String] = ["Tuesday", "Wednesday", "Thursday", "Friday"]
 
+print("")
 print("")
 print("Hello, welcome to the 'SleepHour' terminal")
 print("")
@@ -47,7 +54,13 @@ let fellAsleepTime = Int (readLine()!)!
 
 let wakeUpTime = Int (readLine()!)!
 
-
+if fellAsleepTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
+    print("m")
+} else if wakeUpTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
+    print("n")
+    } else {
+        isRunning = false
+    }
 
 /// This is the equation to find the total sleep time of the night.
 let nightSleepTime: Int = timeUntillMidnight - fellAsleepTime
