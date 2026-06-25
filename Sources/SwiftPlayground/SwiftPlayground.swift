@@ -8,14 +8,15 @@ struct SwiftPlayground {
 /// Enables the while loop
 var isRunning = true
 
-/// Enables the second while loop
-var isRunning2 = true
-
 /// This will record the total ammount of hours.
 var totalHours = 0
 
 /// Amount of days in a week.
-var totalDays = 5
+let totalDays = 5
+
+/// Since the arrays are set in a way that is mismatched, 
+/// there are only 4 in each array.
+let endOfWeek = 4
 
 /// Time untill midnight will be used in the equation.
 let timeUntillMidnight = 12
@@ -24,7 +25,7 @@ let timeUntillMidnight = 12
 let Mourning = 1
 
 /// This is the equation to find the average amount of hours.
-var averageHours = totalHours / totalDays
+let averageHours = totalHours / totalDays
 
 /// These variables change the day of the week.
 var day = 0
@@ -49,17 +50,15 @@ while isRunning == true {
 /// this makes sure that the answer is a number.
 let fellAsleepTime = Int (readLine()!)!
 
-/// this makes sure that the answer is within expected boun
+/// this makes sure that the answer is within expected boundaries
 if fellAsleepTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
     print("Entered the number: \(fellAsleepTime)") 
 } else if fellAsleepTime < Mourning || fellAsleepTime > timeUntillMidnight {
     print("This is not a valid number")
-    isRunning = false
-    isRunning2 = false
+isRunning = false
 } else {
     print("This is not a valid imput")
-    isRunning = false
-    isRunning2 = false
+isRunning = false
 }
 
     print("What time did you wake up on \(wakeUpDays[day])?")
@@ -67,13 +66,18 @@ if fellAsleepTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
 
 let wakeUpTime = Int (readLine()!)!
 
-if wakeUpTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
-    print("Entered the number: \(wakeUpTime)")
-    } else {
-        print()
-        isRunning = false
-        isRunning2 = false
-    }
+/// Checking boundaries for second answer.
+if wakeUpTime >= Mourning && wakeUpTime <= timeUntillMidnight {
+    print("Entered the number: \(wakeUpTime)") 
+} else if wakeUpTime < Mourning || wakeUpTime > timeUntillMidnight {
+    print("This is not a valid number")
+isRunning = false
+} else {
+    print("This is not a valid imput")
+isRunning = false
+}
+
+
 
 /// This is the equation to find the total sleep time of the night.
 let nightSleepTime: Int = timeUntillMidnight - fellAsleepTime
@@ -87,15 +91,13 @@ print("")
 /// Adds the netSleepTime to the total amount of hours they slept.
 totalHours += netSleepTime
 
-/// increases the while loop.
+/// increases the while loop, put it into the next day.
 day += nextDay
 
-}
-/// once the week ends, finish the while loop.
-if day > 4 {
-    isRunning = false
-}
-while isRunning2 == true {
+/// once the week ends, move onto next segment.
+if day >= endOfWeek {
+    print("REACHED END OF WEEK")
+
 
 // After the code, tell the user the stats recorded.
 print("")
@@ -103,33 +105,40 @@ print("You slept a total of \(totalHours) hours.")
 print("")
 print("Through the week you slept an average of \(averageHours) hours every night")
 print("")
-
+}
 
 /// Measure the average and tells the user if they slept a good ammount
-if averageHours >= 9 {
+if averageHours >= 9 && day >= endOfWeek {
     print("Congrats, You slept a healthy amount of hours this week")
 }
-else if averageHours <= 8 {
+else if averageHours <= 8 && day >= 4 {
     print("You need to sleep more bucko")
 } else {
-    print("bro how") 
+    print("") 
 }
+
+// Checkpoint.
+if day >= endOfWeek {
 
 print("")
 print("Do you want to record another week? (Y/N)")
 
-/// This will record whether or not they want to repead the while loop
+/// This will record whether or not they want to repeat the while loop.
 let anotherWeek = readLine()?.lowercased()
 
 
 if anotherWeek == "y" {
-    isRunning = true
-    isRunning2 = false
+    print("")
+    print("ENTERING NEXT WEEK")
+    print("")
+    day = 0
+    totalHours = 0
+
 } else if anotherWeek == "n" {
     print("alr, bye bye")
-    isRunning2 = false
+    isRunning = false
 } else {
     print("This is not a valid response.")
-    isRunning2 = false
+    isRunning = false
 }
-}}}
+}}}}
