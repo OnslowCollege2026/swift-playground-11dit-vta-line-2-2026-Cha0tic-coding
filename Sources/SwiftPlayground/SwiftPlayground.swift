@@ -43,9 +43,9 @@ print("")
 while isRunning == true {
 
 /// Changes the day for each while loop.
-    print("What time did you fall asleep on \(fallAsleepDays[day])?")
+print("What time did you fall asleep on \(fallAsleepDays[day])?")
 
-    print("Enter a number:")
+print("Enter a number:")
 
 /// this makes sure that the answer is a number.
 let fellAsleepTime = Int (readLine()!)!
@@ -55,51 +55,56 @@ if fellAsleepTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
     print("Entered the number: \(fellAsleepTime)") 
 } else if fellAsleepTime < Mourning || fellAsleepTime > timeUntillMidnight {
     print("This is not a valid number")
-isRunning = false
+    isRunning = false
 } else {
     print("This is not a valid imput")
-isRunning = false
+    isRunning = false
 }
 
+if isRunning == false {
     print("What time did you wake up on \(wakeUpDays[day])?")
     print("Enter a number:")
+}
 
-let wakeUpTime = Int (readLine()!)!
+/// Typing the time.
+    let wakeUpTime = Int (readLine()!)!
 
 /// Checking boundaries for second answer.
 if wakeUpTime >= Mourning && wakeUpTime <= timeUntillMidnight {
     print("Entered the number: \(wakeUpTime)") 
 } else if wakeUpTime < Mourning || wakeUpTime > timeUntillMidnight {
     print("This is not a valid number")
-isRunning = false
+    isRunning = false
 } else {
     print("This is not a valid imput")
-isRunning = false
+    isRunning = false
 }
-
-
 
 /// This is the equation to find the total sleep time of the night.
 let nightSleepTime: Int = timeUntillMidnight - fellAsleepTime
 let netSleepTime: Int = nightSleepTime + wakeUpTime
 
-print("you slept for \(netSleepTime) hours.")
-print("Added \(netSleepTime) hours to the total.")
-print("")
+// chek
+if isRunning == true {
+    print("you slept for \(netSleepTime) hours.")
+    print("Added \(netSleepTime) hours to the total.")
+    print("")
+}
 
-
+/// To make sure that if an incorrect input is entered on the last day,
+/// they will not be able to proceed.
+if isRunning == true {
 /// Adds the netSleepTime to the total amount of hours they slept.
 totalHours += netSleepTime
-
 /// increases the while loop, put it into the next day.
 day += nextDay
+}
 
 /// once the week ends, move onto next segment.
 if day >= endOfWeek {
     print("REACHED END OF WEEK")
 
-
-// After the code, tell the user the stats recorded.
+// Tells the user the stats recorded.
 print("")
 print("You slept a total of \(totalHours) hours.")
 print("")
@@ -117,15 +122,13 @@ else if averageHours <= 8 && day >= 4 {
     print("") 
 }
 
-// Checkpoint.
+// Once it reaches the end of the week, check if they want to record another week.
 if day >= endOfWeek {
-
-print("")
-print("Do you want to record another week? (Y/N)")
+    print("")
+    print("Do you want to record another week? (Y/N)")
 
 /// This will record whether or not they want to repeat the while loop.
 let anotherWeek = readLine()?.lowercased()
-
 
 if anotherWeek == "y" {
     print("")
@@ -141,4 +144,5 @@ if anotherWeek == "y" {
     print("This is not a valid response.")
     isRunning = false
 }
-}}}}
+}
+}}}
