@@ -149,7 +149,7 @@ if anotherWeek == "y" {
     isRunning = true
 
 } else if anotherWeek == "n" {
-    print("alr, bye bye")
+    print("bye bye, Butterfly.")
     isRunning = false
 } else {
     print("This is not a valid response.")
