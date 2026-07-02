@@ -9,7 +9,7 @@ struct SwiftPlayground {
 var isRunning = true
 
 /// If code is found invalid, allow another recording without exiting terminal.
-var isValid = false
+var isInvalid = false
 
 /// This will record the total ammount of hours.
 var totalHours = 0
@@ -54,6 +54,7 @@ if fellAsleepTime >= Mourning && fellAsleepTime <= timeUntillMidnight {
 } else if fellAsleepTime < Mourning || fellAsleepTime > timeUntillMidnight {
     print("This is not a valid number")
     isRunning = false
+    isInvalid = true
 } else {
     print("This is not a valid imput")
     isRunning = false
@@ -73,6 +74,7 @@ if wakeUpTime >= Mourning && wakeUpTime <= timeUntillMidnight {
 } else if wakeUpTime < Mourning || wakeUpTime > timeUntillMidnight {
     print("This is not a valid number")
     isRunning = false
+    isInvalid = true
 } else {
     print("This is not a valid imput")
     isRunning = false
@@ -81,7 +83,7 @@ if wakeUpTime >= Mourning && wakeUpTime <= timeUntillMidnight {
 /// This will catch errors, and allow them to restart if wanted.
 if isRunning == false {
     print("Ceasing recording for the week") 
-    isValid = true
+    isInvalid = true
 }
 
 /// This is the equation to find the total sleep time of the night.
@@ -129,7 +131,7 @@ else if averageHours <= 8 && day >= 4 && isRunning == true {
 } 
 
 // Once it reaches the end of the week, check if they want to record another week.
-if day >= endOfWeek && isRunning == true || isValid == true {
+if day >= endOfWeek && isRunning == true || isInvalid == true {
     print("")
     print("Do you want to record another week? (Y/N)")
 
@@ -143,7 +145,7 @@ if anotherWeek == "y" {
     day = 0
     totalHours = 0
     averageHours = 0
-    isValid = false
+    isInvalid = false
     isRunning = true
 
 } else if anotherWeek == "n" {
